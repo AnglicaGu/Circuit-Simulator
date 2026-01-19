@@ -1,0 +1,124 @@
+/*
+ * Name: Angelica Gu
+ * Date: Jun 13 2025
+ * Class: EducationFrame1
+ * Description: This is the first page of education: Series Circuit.
+ * It can lead to the experiment frame of series circuit.
+ */
+
+package view;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.util.ArrayList;
+
+import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.SwingConstants;
+
+public class EducationFrame1 extends JFrame {
+
+	// title/menu panel
+	JPanel toolPanel = new JPanel();
+	public JButton homeButton = new JButton("Home");
+	public JButton materialButton = new JButton("Material");
+
+	// Initializing GUI elements
+	public JLabel titleLabel1 = new JLabel("Learn About Circuits:");
+	public JLabel titleLabel2 = new JLabel("1, Series Circuits");
+	public JLabel contentLabel = new JLabel("<html>In a series circuit, components are connected in"
+			+ "<br> a single path, so current flows through each one"
+			+ "<br> in turn. If one component fails, the entire circuit"
+			+ "<br> stops working. The lights in classrooms always" + "<br> use series circuits.</html>");
+	public JButton experimentButton = new JButton("Build One Yourself");
+	public ImageIcon seriesCircuit = new ImageIcon("src/images/Series.gif");
+	public JLabel gifLabel = new JLabel(seriesCircuit);
+	public JLabel noteLabel = new JLabel("All the bulbs light up");
+	public JButton nextButton = new JButton("Next →");
+
+	// the frame
+	public EducationFrame1() {
+
+		frameSetup();
+
+	}
+
+	// set up the whole frame
+	private void frameSetup() {
+
+		// Initialize the frame
+		setTitle("Yu's Circuit Simulator");
+		setSize(1200, 600);
+		setLayout(null);
+		getContentPane().setBackground(Color.WHITE);
+
+		// ------ TOOL PANEL ------
+		homeButton.setBounds(0, 0, 227, 88);
+		homeButton.setFont(new Font("Inter", Font.BOLD, 24));
+		homeButton.setBackground(Color.decode("#384766"));
+		homeButton.setForeground(Color.WHITE);
+		toolPanel.add(homeButton);
+
+		materialButton.setBounds(945, 0, 256, 88);
+		materialButton.setFont(new Font("Inter", Font.BOLD, 24));
+		materialButton.setBackground(Color.decode("#384766"));
+		materialButton.setForeground(Color.WHITE);
+		toolPanel.add(materialButton);
+
+		// add the buttons onto the tool panel
+		toolPanel.setBounds(0, 0, 1200, 88);
+		toolPanel.setLayout(null);
+		toolPanel.setBackground(Color.decode("#8baed3"));
+		add(toolPanel);
+
+		// ------ COTENTS ------
+		titleLabel1.setBounds(60, 112, 568, 48);
+		titleLabel1.setFont(new Font("Inter", Font.BOLD, 30));
+		titleLabel1.setForeground(Color.BLACK);
+		add(titleLabel1);
+
+		titleLabel2.setBounds(60, 183, 288, 41);
+		titleLabel2.setFont(new Font("Inter", Font.BOLD, 26));
+		titleLabel2.setForeground(Color.BLACK);
+		add(titleLabel2);
+
+		contentLabel.setBounds(60, 233, 622, 180);
+		contentLabel.setFont(new Font("Inter", Font.PLAIN, 26));
+		contentLabel.setForeground(Color.BLACK);
+		add(contentLabel);
+
+		experimentButton.setBounds(97, 452, 400, 88);
+		experimentButton.setBackground(Color.decode("#f2c748"));
+		experimentButton.setForeground(Color.WHITE);
+		experimentButton.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 40));
+		add(experimentButton);
+
+		gifLabel.setBounds(700, 167, 391, 229);
+		add(gifLabel);
+
+		noteLabel.setBounds(756, 423, 299, 32);
+		noteLabel.setFont(new Font("Inter", Font.PLAIN, 20));
+		noteLabel.setForeground(Color.BLACK);
+		add(noteLabel);
+
+		nextButton.setBounds(1052, 475, 135, 88);
+		nextButton.setFont(new Font("Inter", Font.BOLD, 24));
+		nextButton.setBackground(Color.decode("#384766"));
+		nextButton.setForeground(Color.WHITE);
+		add(nextButton);
+
+		// leaving the frame
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setResizable(false);
+		setVisible(true);
+
+	}
+}
